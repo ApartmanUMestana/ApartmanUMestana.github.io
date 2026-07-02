@@ -1,0 +1,12 @@
+# Claude Code local config (not part of the website)
+.claude/
+
+# Local-only docs / dev files — kept on disk, not published to GitHub
+README.md
+WEBSITE-SPEC.md
+cookie-info-modal.html
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
+desktop.ini
