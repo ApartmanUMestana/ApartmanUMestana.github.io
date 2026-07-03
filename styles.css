@@ -256,7 +256,9 @@ p { margin: 0 0 1rem; }
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(26,19,13,.28), rgba(26,19,13,.58));
+  /* Hero darkening: the two numbers are opacity (0 = none, 1 = black).
+     First = top, second = bottom. Lower them for a brighter photo. */
+  background: linear-gradient(180deg, rgba(26,19,13,.12), rgba(26,19,13,.42));
 }
 .hero-content { position: relative; z-index: 1; margin: 0 auto; max-width: 780px; padding: 5rem 22px; }
 .hero-logo {
