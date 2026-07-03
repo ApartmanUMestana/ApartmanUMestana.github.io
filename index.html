@@ -6,7 +6,18 @@
   <!-- Maintenance switch: if maintenance.js sets the flag true, show the Coming Soon page.
        Toggle by editing maintenance.js (true/false) — works from GitHub on phone or PC. -->
   <script src="maintenance.js"></script>
-  <script>if (window.SITE_MAINTENANCE) { location.replace("coming-soon.html"); }</script>
+  <script>
+    // Coming-soon redirect applies ONLY on the live site.
+    // On your PC (file:// or localhost) you always see the full site,
+    // regardless of the on/off switch — so you can preview any changes.
+    (function () {
+      var h = location.hostname;
+      var isLocal = (h === "" || h === "localhost" || h === "127.0.0.1");
+      if (window.SITE_MAINTENANCE && !isLocal) {
+        location.replace("coming-soon.html");
+      }
+    })();
+  </script>
   <meta name="theme-color" content="#1a130d" />
 
   <!-- Primary meta -->
