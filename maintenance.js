@@ -8,4 +8,4 @@
    GitHub → repo → this file (maintenance.js) → pencil (Edit) →
    set true or false → Commit. Live in ~1-2 minutes.
    ============================================================ */
-window.SITE_MAINTENANCE = true;
+window.SITE_MAINTENANCE = false;
