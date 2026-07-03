@@ -27,8 +27,8 @@
   --maxw:    1140px;
   --header-h: 70px;
 
-  --font-head: "Georgia", "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
-  --font-body: "Georgia", "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
+  --font-head: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "Courier New", Courier, monospace;
 }
 
@@ -92,7 +92,7 @@ p { margin: 0 0 1rem; }
   color: var(--gold);
   margin-bottom: 0.5rem;
 }
-.narrow .eyebrow { text-align: left; }
+.narrow .eyebrow { text-align: center; }
 
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
@@ -102,7 +102,7 @@ p { margin: 0 0 1rem; }
   letter-spacing: 0.5px;
   margin-bottom: 0.4rem;
 }
-.narrow .section-title { text-align: left; }
+.narrow .section-title { text-align: center; }
 
 .section-sub {
   color: var(--muted);
@@ -111,14 +111,15 @@ p { margin: 0 0 1rem; }
   letter-spacing: 0.5px;
   margin-bottom: 0.75rem;
 }
-.narrow .section-sub { text-align: left; }
+.narrow .section-sub { text-align: center; }
+.narrow p { text-align: center; }   /* center prose in narrow sections (About, Location, Contact) */
 
 .lead { font-size: 1.15rem; color: var(--cream-dim); }
 
 /* -------- Buttons -------- */
 .btn {
   display: inline-block;
-  font-family: var(--font-head);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 12px;
   letter-spacing: 2px;
@@ -255,7 +256,7 @@ p { margin: 0 0 1rem; }
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(26,19,13,.55), rgba(26,19,13,.82));
+  background: linear-gradient(180deg, rgba(26,19,13,.28), rgba(26,19,13,.58));
 }
 .hero-content { position: relative; z-index: 1; margin: 0 auto; max-width: 780px; padding: 5rem 22px; }
 .hero-logo {
