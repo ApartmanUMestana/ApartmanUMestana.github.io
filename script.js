@@ -11,6 +11,17 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* -------- Deter casual image saving --------
+     Blocks right-click "Save image", drag-to-save, and works with
+     dynamically added carousel/lightbox images. Note: this only stops
+     casual saving — screenshots and DevTools can't be prevented. */
+  document.addEventListener("contextmenu", function (e) {
+    if (e.target && e.target.closest && e.target.closest("img")) e.preventDefault();
+  });
+  document.addEventListener("dragstart", function (e) {
+    if (e.target && e.target.closest && e.target.closest("img")) e.preventDefault();
+  });
+
   /* -------- Cookie helpers (used for language + consent) -------- */
   var COOKIE_MAX_DAYS = 365; // ~12 months, matches the cookie modal text
   function setCookie(name, value, days) {

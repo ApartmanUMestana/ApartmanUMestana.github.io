@@ -47,7 +47,13 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; height: auto; }
+img {
+  max-width: 100%; display: block; height: auto;
+  -webkit-user-drag: none;          /* block drag-to-save (WebKit/Chrome) */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;      /* block iOS long-press save menu */
+}
 
 a { color: var(--gold); text-decoration: none; }
 a:hover { color: var(--gold-bright); text-decoration: underline; }
