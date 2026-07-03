@@ -1,52 +1,438 @@
 <!DOCTYPE html>
-<!-- MAINTENANCE-MODE : this page is shown while the site is temporarily hidden. -->
 <html lang="sk">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Maintenance switch: if maintenance.js sets the flag true, show the Coming Soon page.
+       Toggle by editing maintenance.js (true/false) — works from GitHub on phone or PC. -->
+  <script src="maintenance.js"></script>
+  <script>if (window.SITE_MAINTENANCE) { location.replace("coming-soon.html"); }</script>
   <meta name="theme-color" content="#1a130d" />
-  <title>Apartmán u Mešťana</title>
+
+  <!-- Primary meta -->
+  <title data-sk="Apartmán u Mešťana — ubytovanie v Banskej Štiavnici" data-en="Apartmán u Mešťana — accommodation in Banská Štiavnica">Apartmán u Mešťana — ubytovanie v Banskej Štiavnici</title>
+  <meta name="description" data-sk="Novo zrekonštruovaný apartmán v historickom centre Banskej Štiavnice (UNESCO). Rezervujte si pobyt priamo na Booking.com." data-en="Newly renovated apartment in the historic UNESCO centre of Banská Štiavnica. Book your stay directly on Booking.com." content="Novo zrekonštruovaný apartmán v historickom centre Banskej Štiavnice (UNESCO). Rezervujte si pobyt priamo na Booking.com." />
+  <link rel="canonical" href="https://apartmanumestana.sk/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Apartmán u Mešťana — Banská Štiavnica" />
+  <meta property="og:description" content="Novo zrekonštruovaný apartmán v historickom centre Banskej Štiavnice (UNESCO)." />
+  <meta property="og:image" content="https://apartmanumestana.sk/assets/img/hero.jpg" />
+  <meta property="og:url" content="https://apartmanumestana.sk/" />
+  <meta property="og:locale" content="sk_SK" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Apartmán u Mešťana — Banská Štiavnica" />
+  <meta name="twitter:description" content="Novo zrekonštruovaný apartmán v historickom centre Banskej Štiavnice (UNESCO)." />
+  <meta name="twitter:image" content="https://apartmanumestana.sk/assets/img/hero.jpg" />
+
+  <!-- Favicon -->
   <link rel="icon" href="assets/favicon.png" />
-  <style>
-    :root{ --bg:#1a130d; --gold:#c9a876; --gold-bright:#d9bc8e; --gold-dim:#8b7453; --cream:#e8dfce; --cream-dim:#b8a988; }
-    *{box-sizing:border-box;margin:0;padding:0;}
-    html,body{height:100%;}
-    body{
-      font-family:"Georgia","Palatino Linotype","Times New Roman",serif;
-      color:var(--cream);
-      background:
-        radial-gradient(ellipse at top, rgba(201,168,118,.10), transparent 60%),
-        linear-gradient(180deg,#251a12 0%,#1a130d 55%,#0f0905 100%);
-      min-height:100dvh;display:flex;align-items:center;justify-content:center;
-      text-align:center;padding:2rem 1.25rem;
-    }
-    .wrap{max-width:560px;}
-    .logo{
-      width:120px;height:120px;border-radius:50%;
-      background:var(--cream);padding:4px;border:2px solid var(--gold);
-      box-shadow:0 8px 30px rgba(0,0,0,.6);margin:0 auto 1.5rem;
-    }
-    .eyebrow{text-transform:uppercase;letter-spacing:4px;font-size:12px;color:var(--gold);margin-bottom:.5rem;}
-    h1{font-style:italic;font-weight:400;font-size:clamp(1.8rem,6vw,2.8rem);color:var(--cream);letter-spacing:.5px;margin-bottom:1rem;}
-    .ornament{color:var(--gold-dim);letter-spacing:8px;font-size:18px;margin:1.25rem 0;}
-    p{color:var(--cream-dim);font-size:1.1rem;line-height:1.6;margin-bottom:.5rem;}
-    .en{color:var(--gold-dim);font-style:italic;font-size:1rem;}
-    .contact{margin-top:2rem;font-size:1rem;}
-    .contact a{color:var(--gold);text-decoration:none;}
-    .contact a:hover{color:var(--gold-bright);}
-  </style>
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Apartmán u Mešťana",
+    "description": "Newly renovated apartment in the historic UNESCO centre of Banská Štiavnica.",
+    "url": "https://apartmanumestana.sk/",
+    "telephone": "[[PHONE_1]]",
+    "email": "apartmanumestana@gmail.com",
+    "image": "https://apartmanumestana.sk/assets/img/hero.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Akademická 6",
+      "addressLocality": "Banská Štiavnica",
+      "postalCode": "969 01",
+      "addressCountry": "SK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "48.458642",
+      "longitude": "18.896763"
+    },
+    "amenityFeature": [
+      { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Parking", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Kitchen", "value": true }
+    ]
+  }
+  </script>
 </head>
+
 <body>
-  <div class="wrap">
-    <img class="logo" src="assets/logo.png" alt="Apartmán u Mešťana" />
-    <div class="eyebrow">Apartmán u Mešťana</div>
-    <h1>Pripravujeme pre vás stránku</h1>
-    <div class="ornament">❦ ❦ ❦</div>
-    <p>Naša webová stránka je momentálne v príprave. Ďakujeme za trpezlivosť.</p>
-    <p class="en">Our website is being prepared. Thank you for your patience.</p>
-    <p class="contact">
-      📧 <a href="mailto:apartmanumestana@gmail.com">apartmanumestana@gmail.com</a>
-    </p>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <img src="assets/logo.png" alt="Apartmán u Mešťana" class="brand-logo" />
+        <span class="brand-name">Apartmán u Mešťana</span>
+      </a>
+
+      <nav class="nav" id="primaryNav" aria-label="Hlavná navigácia">
+        <a href="#amenities" class="nav-link" data-sk="Vybavenie" data-en="Amenities">Vybavenie</a>
+        <a href="#attractions" class="nav-link" data-sk="Okolie" data-en="Attractions">Okolie</a>
+        <a href="#contact" class="nav-link" data-sk="Kontakt" data-en="Contact">Kontakt</a>
+
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" class="lang-btn is-active" data-lang="sk" aria-pressed="true">SK</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <a href="https://www.booking.com/" target="_blank" rel="noopener" class="btn btn-primary nav-cta" data-sk="Overiť dostupnosť" data-en="Check availability">Overiť dostupnosť</a>
+      </nav>
+
+      <button type="button" class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content reveal">
+        <img src="assets/logo.png" alt="Apartmán u Mešťana" class="hero-logo" />
+        <p class="hero-eyebrow" data-sk="Vitajte" data-en="Welcome">Vitajte</p>
+        <h1 class="hero-headline" data-sk="Apartmán u Mešťana" data-en="Apartmán u Mešťana">Apartmán u Mešťana</h1>
+        <div class="hero-ornament">❦ ❦ ❦</div>
+        <p class="hero-lede" data-sk="Novo zrekonštruovaný apartmán v srdci historickej Banskej Štiavnice — mesta zapísaného v zozname UNESCO." data-en="A newly renovated apartment in the heart of historic Banská Štiavnica — a UNESCO World Heritage town.">Novo zrekonštruovaný apartmán v srdci historickej Banskej Štiavnice — mesta zapísaného v zozname UNESCO.</p>
+        <a href="https://www.booking.com/" target="_blank" rel="noopener" class="btn btn-primary btn-lg" data-sk="Overiť dostupnosť" data-en="Check availability">Overiť dostupnosť</a>
+      </div>
+    </section>
+
+    <!-- ============ PHOTO GALLERY (apartment) ============ -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <span class="eyebrow" data-sk="Fotogaléria" data-en="Photo gallery">Fotogaléria</span>
+        <h2 class="section-title" data-sk="Pozrite si náš apartmán" data-en="Take a look inside">Pozrite si náš apartmán</h2>
+        <div class="ornament">❦</div>
+        <!-- Photos auto-load from assets/img/apartment/ (01.jpg, 02.jpg …) via script.js -->
+        <div class="gallery-grid" id="apartmentGallery"></div>
+      </div>
+    </section>
+
+    <!-- ============ DESCRIPTION ============ -->
+    <section class="section section-surface" id="about">
+      <div class="container narrow">
+        <span class="eyebrow" data-sk="O apartmáne" data-en="About">O apartmáne</span>
+        <h2 class="section-title" data-sk="Váš domov v historickom meste" data-en="Your home in a historic town">Váš domov v historickom meste</h2>
+        <div class="ornament">❦</div>
+        <p class="lead" data-sk="Celoročne sa môžete ubytovať v apartmáne s kapacitou pre 1–2 osôb. Apartmán má jednu spálňu s manželskou posteľou, pohovka v obývačke sa rozkladá na druhé dvojlôžko. V obývacej izbe nájdete televízor s plochou obrazovkou a jedálenský kút, kuchyňa je plne vybavená (chladnička, varná doska, kanvica, mikrovlnná rúra). Kúpeľňa má vaňu so sprchou a toaletu. K dispozícii je bezplatné Wi-Fi." data-en="Year-round you can stay in an apartment with capacity for 1–2 guests. It has one bedroom with a double bed, and the living-room sofa folds out into a second double. The living room has a flat-screen TV and a dining area; the kitchen is fully equipped (fridge, hob, kettle, microwave). The bathroom has a bath with shower and toilet. Free Wi-Fi is available.">Celoročne sa môžete ubytovať v apartmáne s kapacitou pre 1–2 osôb. Apartmán má jednu spálňu s manželskou posteľou, pohovka v obývačke sa rozkladá na druhé dvojlôžko. V obývacej izbe nájdete televízor s plochou obrazovkou a jedálenský kút, kuchyňa je plne vybavená (chladnička, varná doska, kanvica, mikrovlnná rúra). Kúpeľňa má vaňu so sprchou a toaletu. K dispozícii je bezplatné Wi-Fi.</p>
+      </div>
+    </section>
+
+    <!-- ============ KEY FACTS ============ -->
+    <section class="section" id="facts">
+      <div class="container">
+        <span class="eyebrow" data-sk="V skratke" data-en="At a glance">V skratke</span>
+        <h2 class="section-title" data-sk="Kľúčové informácie" data-en="Key facts">Kľúčové informácie</h2>
+        <div class="ornament">❦</div>
+        <ul class="facts-grid">
+          <li class="fact reveal"><span class="fact-icon" aria-hidden="true">👥</span><span data-sk="Kapacita 1–2 osôb" data-en="Capacity 1–2 guests">Kapacita 1–2 osôb</span></li>
+          <li class="fact reveal"><span class="fact-icon" aria-hidden="true">🛏️</span><span data-sk="1 manželská posteľ" data-en="1 double bed">1 manželská posteľ</span></li>
+          <li class="fact reveal"><span class="fact-icon" aria-hidden="true">🛋️</span><span data-sk="1 rozkladacia pohovka (2 lôžka)" data-en="1 sofa bed (2 berths)">1 rozkladacia pohovka (2 lôžka)</span></li>
+          <li class="fact reveal"><span class="fact-icon" aria-hidden="true">🅿️</span><span data-sk="Parkovanie v okolí" data-en="Parking nearby">Parkovanie v okolí</span></li>
+          <li class="fact reveal"><span class="fact-icon" aria-hidden="true">📶</span><span data-sk="Wi-Fi zdarma" data-en="Free Wi-Fi">Wi-Fi zdarma</span></li>
+          <li class="fact reveal"><span class="fact-icon" aria-hidden="true">🍳</span><span data-sk="Kuchyňa a jedálenský kút" data-en="Kitchen &amp; dining area">Kuchyňa a jedálenský kút</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ AMENITIES ============ -->
+    <section class="section section-surface" id="amenities">
+      <div class="container">
+        <span class="eyebrow" data-sk="Vybavenie" data-en="Amenities">Vybavenie</span>
+        <h2 class="section-title" data-sk="Vybavenie apartmánu" data-en="Apartment amenities">Vybavenie apartmánu</h2>
+        <div class="ornament">❦</div>
+        <ul class="checklist columns reveal">
+          <li data-sk="Posteľná bielizeň" data-en="Bed linen">Posteľná bielizeň</li>
+          <li data-sk="Súkromný byt v budove" data-en="Private flat in building">Súkromný byt v budove</li>
+          <li data-sk="Dezinfekcia na ruky" data-en="Hand sanitiser">Dezinfekcia na ruky</li>
+          <li data-sk="Spoločenské hry" data-en="Board games">Spoločenské hry</li>
+          <li data-sk="Knihy" data-en="Books">Knihy</li>
+          <li data-sk="Kanvica" data-en="Kettle">Kanvica</li>
+          <li data-sk="Kávovar" data-en="Coffee maker">Kávovar</li>
+          <li data-sk="Kúrenie" data-en="Heating">Kúrenie</li>
+          <li data-sk="Chladnička" data-en="Fridge">Chladnička</li>
+          <li data-sk="Varná doska" data-en="Hob">Varná doska</li>
+          <li data-sk="Kuchynský riad" data-en="Kitchenware">Kuchynský riad</li>
+          <li data-sk="Jedálenský stôl" data-en="Dining table">Jedálenský stôl</li>
+          <li data-sk="Čistiace prostriedky" data-en="Cleaning products">Čistiace prostriedky</li>
+          <li data-sk="Mikrovlnná rúra" data-en="Microwave">Mikrovlnná rúra</li>
+          <li data-sk="Televízor s plochou obrazovkou" data-en="Flat-screen TV">Televízor s plochou obrazovkou</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ BATHROOM ============ -->
+    <section class="section" id="bathroom">
+      <div class="container narrow">
+        <span class="eyebrow" data-sk="Kúpeľňa" data-en="Bathroom">Kúpeľňa</span>
+        <h2 class="section-title" data-sk="Vybavenie kúpeľne" data-en="Bathroom equipment">Vybavenie kúpeľne</h2>
+        <div class="ornament">❦</div>
+        <ul class="checklist columns reveal">
+          <li data-sk="Toaletné potreby zdarma" data-en="Free toiletries">Toaletné potreby zdarma</li>
+          <li data-sk="Vaňa so sprchou" data-en="Bath with shower">Vaňa so sprchou</li>
+          <li data-sk="Uteráky" data-en="Towels">Uteráky</li>
+          <li data-sk="Toaletný papier" data-en="Toilet paper">Toaletný papier</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ LOCATION ============ -->
+    <section class="section section-surface" id="location">
+      <div class="container narrow">
+        <span class="eyebrow" data-sk="Poloha" data-en="Location">Poloha</span>
+        <h2 class="section-title" data-sk="Priamo v historickom centre" data-en="Right in the historic centre">Priamo v historickom centre</h2>
+        <div class="ornament">❦</div>
+        <p data-sk="Apartmán sa nachádza v novo zrekonštruovanej historickej budove priamo v centre Banskej Štiavnice, na Akademickej ulici — pár krokov od Námestia sv. Trojice. V historickom centre je platená parkovacia zóna a v blízkosti nájdete odporúčané parkovacie miesta." data-en="The apartment is set in a newly renovated historic building right in the centre of Banská Štiavnica, on Akademická street — just a few steps from Holy Trinity Square. The historic centre has a paid parking zone, with recommended parking spots close by.">Apartmán sa nachádza v novo zrekonštruovanej historickej budove priamo v centre Banskej Štiavnice, na Akademickej ulici — pár krokov od Námestia sv. Trojice. V historickom centre je platená parkovacia zóna a v blízkosti nájdete odporúčané parkovacie miesta.</p>
+        <p data-sk="Mesto leží uprostred nádhernej prírody s krásnymi výhľadmi, ponúka zimné aj letné športy, miestne reštaurácie, vinárne a terasy. Cez deň i v noci má svoje neopakovateľné čaro." data-en="The town sits amid beautiful nature with lovely views, offering winter and summer sports, local restaurants, wine bars and terraces. By day and by night it has a charm all of its own.">Mesto leží uprostred nádhernej prírody s krásnymi výhľadmi, ponúka zimné aj letné športy, miestne reštaurácie, vinárne a terasy. Cez deň i v noci má svoje neopakovateľné čaro.</p>
+      </div>
+    </section>
+
+    <!-- ============ ATTRACTIONS ============ -->
+    <section class="section" id="attractions">
+      <div class="container">
+        <span class="eyebrow" data-sk="Okolie" data-en="Nearby">Okolie</span>
+        <h2 class="section-title" data-sk="Zaujímavosti v okolí" data-en="Nearby attractions">Zaujímavosti v okolí</h2>
+        <div class="ornament">❦</div>
+        <div class="cards-grid">
+
+          <article class="card reveal">
+            <div class="card-media"><img src="assets/img/attractions/trojice.jpg" alt="Námestie sv. Trojice" loading="lazy" /></div>
+            <div class="card-body">
+              <span class="card-label" data-sk="Pamiatka" data-en="Landmark">Pamiatka</span>
+              <h3 class="card-title" data-sk="Námestie sv. Trojice" data-en="Holy Trinity Square">Námestie sv. Trojice</h3>
+              <p data-sk="Srdce historického mesta s barokovým morovým stĺpom — hlavné námestie zapísané v UNESCO." data-en="The heart of the historic town with its Baroque plague column — the main UNESCO-listed square.">Srdce historického mesta s barokovým morovým stĺpom — hlavné námestie zapísané v UNESCO.</p>
+              <p class="card-meta" data-sk="📍 2 min chôdze" data-en="📍 2 min walk">📍 2 min chôdze</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-media"><img src="assets/img/attractions/kalvaria.jpg" alt="Kalvária" loading="lazy" /></div>
+            <div class="card-body">
+              <span class="card-label" data-sk="UNESCO" data-en="UNESCO">UNESCO</span>
+              <h3 class="card-title" data-sk="Kalvária" data-en="Calvary">Kalvária</h3>
+              <p data-sk="Baroková Kalvária z 18. storočia — považovaná za najkrajšiu v strednej Európe. Nezabudnuteľné výhľady na celé mesto." data-en="An 18th-century Baroque Calvary, considered the finest in Central Europe. Unforgettable views of the town.">Baroková Kalvária z 18. storočia — považovaná za najkrajšiu v strednej Európe. Nezabudnuteľné výhľady na celé mesto.</p>
+              <p class="card-meta" data-sk="📍 25 min chôdze · 5 min autom" data-en="📍 25 min walk · 5 min by car">📍 25 min chôdze · 5 min autom</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-media"><img src="assets/img/attractions/novy-zamok.jpg" alt="Nový zámok" loading="lazy" /></div>
+            <div class="card-body">
+              <span class="card-label" data-sk="Hrad" data-en="Castle">Hrad</span>
+              <h3 class="card-title" data-sk="Nový zámok" data-en="New Castle">Nový zámok</h3>
+              <p data-sk="Biela strážna veža zo 16. storočia. Z vyhliadkovej plošiny dovidíte po celú Štiavnicu a okolité kopce." data-en="A white 16th-century watchtower. Climb to the top for sweeping views of Štiavnica and the surrounding hills.">Biela strážna veža zo 16. storočia. Z vyhliadkovej plošiny dovidíte po celú Štiavnicu a okolité kopce.</p>
+              <p class="card-meta" data-sk="📍 12 min chôdze · stúpanie" data-en="📍 12 min walk · uphill">📍 12 min chôdze · stúpanie</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-media"><img src="assets/img/attractions/banske-muzeum.jpg" alt="Slovenské banské múzeum" loading="lazy" /></div>
+            <div class="card-body">
+              <span class="card-label" data-sk="Múzeum" data-en="Museum">Múzeum</span>
+              <h3 class="card-title" data-sk="Slovenské banské múzeum" data-en="Slovak Mining Museum">Slovenské banské múzeum</h3>
+              <p data-sk="Expozícia o stáročnej histórii baníctva. Možnosť zostúpiť do autentickej štôlne — zážitok pre celú rodinu." data-en="Centuries of mining history, with the chance to descend into an authentic mine shaft — a family favorite.">Expozícia o stáročnej histórii baníctva. Možnosť zostúpiť do autentickej štôlne — zážitok pre celú rodinu.</p>
+              <p class="card-meta" data-sk="📍 8 min chôdze" data-en="📍 8 min walk">📍 8 min chôdze</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-media"><img src="assets/img/attractions/pivovar-erb.jpg" alt="Pivovar Erb" loading="lazy" /></div>
+            <div class="card-body">
+              <span class="card-label" data-sk="Reštaurácia" data-en="Restaurant">Reštaurácia</span>
+              <h3 class="card-title" data-sk="Pivovar Erb" data-en="Erb Brewery">Pivovar Erb</h3>
+              <p data-sk="Remeselný pivovar s reštauráciou priamo v centre. Tradičné slovenské jedlá a vlastné pivo." data-en="Craft brewery and restaurant right in the center. Traditional Slovak cuisine paired with house-brewed beer.">Remeselný pivovar s reštauráciou priamo v centre. Tradičné slovenské jedlá a vlastné pivo.</p>
+              <p class="card-meta" data-sk="📍 5 min chôdze · €€" data-en="📍 5 min walk · €€">📍 5 min chôdze · €€</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card-media"><img src="assets/img/attractions/tajch-klinger.jpg" alt="Tajch Klinger" loading="lazy" /></div>
+            <div class="card-body">
+              <span class="card-label" data-sk="Príroda" data-en="Nature">Príroda</span>
+              <h3 class="card-title" data-sk="Tajch Klinger" data-en="Klinger Reservoir">Tajch Klinger</h3>
+              <p data-sk="Historická banská vodná nádrž — v lete obľúbené miesto na kúpanie, celoročne skvelé na prechádzky." data-en="A historic mining reservoir — a beloved spot for summer swimming and year-round nature walks.">Historická banská vodná nádrž — v lete obľúbené miesto na kúpanie, celoročne skvelé na prechádzky.</p>
+              <p class="card-meta" data-sk="📍 20 min chôdze · kúpanie v lete" data-en="📍 20 min walk · swimming in summer">📍 20 min chôdze · kúpanie v lete</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SECOND GALLERY / MOOD ============ -->
+    <section class="section section-surface" id="surroundings">
+      <div class="container">
+        <span class="eyebrow" data-sk="Mesto a okolie" data-en="Town &amp; surroundings">Mesto a okolie</span>
+        <h2 class="section-title" data-sk="Banská Štiavnica" data-en="Banská Štiavnica">Banská Štiavnica</h2>
+        <div class="ornament">❦</div>
+        <p class="lead reveal mood-lead" data-sk="Malebné banícke mesto obklopené kopcami, tajchmi a lesmi — klenot strednej Európy, ktorý si zamilujete cez deň aj v noci." data-en="A picturesque mining town surrounded by hills, reservoirs and forests — a gem of Central Europe you'll love by day and by night.">Malebné banícke mesto obklopené kopcami, tajchmi a lesmi — klenot strednej Európy, ktorý si zamilujete cez deň aj v noci.</p>
+        <!-- Photos auto-load from assets/img/gallery/ (01.jpg, 02.jpg …) via script.js -->
+        <div class="gallery-grid gallery-grid--mood" id="moodGallery"></div>
+      </div>
+    </section>
+
+    <!-- ============ MAP ============ -->
+    <section class="section" id="map">
+      <div class="container">
+        <span class="eyebrow" data-sk="Mapa" data-en="Map">Mapa</span>
+        <h2 class="section-title" data-sk="Kde nás nájdete" data-en="Find us">Kde nás nájdete</h2>
+        <div class="ornament">❦</div>
+        <div class="map-embed reveal">
+          <iframe
+            title="Apartmán u Mešťana — Akademická 6, Banská Štiavnica"
+            src="https://www.google.com/maps?q=48.458642,18.896763&hl=sk&z=17&t=k&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section section-surface" id="contact">
+      <div class="container narrow contact-block">
+        <span class="eyebrow" data-sk="Kontakt" data-en="Contact">Kontakt</span>
+        <h2 class="section-title" data-sk="Kontakt" data-en="Contact">Kontakt</h2>
+        <div class="ornament">❦</div>
+        <p class="contact-name">Apartmán u Mešťana</p>
+        <p class="contact-tagline" data-sk="Tešíme sa na vašu návštevu" data-en="We look forward to welcoming you">Tešíme sa na vašu návštevu</p>
+
+        <ul class="contact-list">
+          <li>
+            <span class="contact-icon" aria-hidden="true">📞</span>
+            <span class="contact-text">
+              <span class="contact-label" data-sk="Telefón" data-en="Phone">Telefón</span>
+              <span class="contact-value"><a href="tel:[[PHONE_1_RAW]]">[[PHONE_1]]</a></span>
+            </span>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <span class="contact-text">
+              <span class="contact-label" data-sk="E-mail" data-en="Email">E-mail</span>
+              <span class="contact-value"><a href="mailto:apartmanumestana@gmail.com">apartmanumestana@gmail.com</a></span>
+            </span>
+          </li>
+          <li>
+            <span class="contact-icon" aria-hidden="true">📍</span>
+            <span class="contact-text">
+              <span class="contact-label" data-sk="Adresa" data-en="Address">Adresa</span>
+              <span class="contact-value">Akademická 6, 969 01 Banská Štiavnica</span>
+            </span>
+          </li>
+        </ul>
+
+        <p data-sk="Neváhajte nás kontaktovať telefonicky alebo správou — radi vám pomôžeme." data-en="Feel free to contact us by phone or message — we're happy to help.">Neváhajte nás kontaktovať telefonicky alebo správou — radi vám pomôžeme.</p>
+
+        <div class="contact-actions">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=48.458642,18.896763" target="_blank" rel="noopener" class="btn btn-outline" data-sk="Navigovať" data-en="Navigate">Navigovať</a>
+          <a href="https://www.booking.com/" target="_blank" rel="noopener" class="btn btn-primary" data-sk="Overiť dostupnosť" data-en="Check availability">Overiť dostupnosť</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="assets/logo.png" alt="Apartmán u Mešťana" class="footer-logo" />
+      <p class="footer-brand">Apartmán u Mešťana</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#amenities" data-sk="Vybavenie" data-en="Amenities">Vybavenie</a>
+        <a href="#attractions" data-sk="Okolie" data-en="Attractions">Okolie</a>
+        <a href="#contact" data-sk="Kontakt" data-en="Contact">Kontakt</a>
+        <a href="#" onclick="openCookieModal(); return false;" data-sk="Súkromie a cookies" data-en="Privacy &amp; cookies">Súkromie a cookies</a>
+      </nav>
+      <p class="footer-copy">© <span id="year"></span> Apartmán u Mešťana. <span data-sk="Všetky práva vyhradené." data-en="All rights reserved.">Všetky práva vyhradené.</span></p>
+    </div>
+  </footer>
+
+  <!-- ============ COOKIE BANNER (only needed if analytics added) ============ -->
+  <div class="cookie-banner" id="cookieBanner" hidden>
+    <p data-sk="Táto stránka používa iba nevyhnutné cookies." data-en="This site uses essential cookies only.">Táto stránka používa iba nevyhnutné cookies.</p>
+    <div class="cookie-actions">
+      <a href="#" class="link-more" onclick="openCookieModal(); return false;" data-sk="Viac" data-en="More">Viac</a>
+      <button type="button" class="btn btn-primary" id="cookieAccept" data-sk="Súhlasím" data-en="Accept">Súhlasím</button>
+    </div>
   </div>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Fotogaléria">
+    <button type="button" class="lb-close" id="lbClose" aria-label="Zavrieť">✕</button>
+    <button type="button" class="lb-nav lb-prev" id="lbPrev" aria-label="Predchádzajúca">‹</button>
+    <img class="lb-image" id="lbImage" src="" alt="" />
+    <button type="button" class="lb-nav lb-next" id="lbNext" aria-label="Ďalšia">›</button>
+  </div>
+
+  <!-- ============ COOKIE INFO MODAL ============ -->
+  <div class="cookie-modal-overlay" id="cookie-modal" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+    <div class="cookie-modal-wrap">
+      <button type="button" class="cookie-modal-x" onclick="closeCookieModal()" aria-label="Zavrieť">&times;</button>
+      <div class="cookie-modal">
+
+        <h2 id="cookie-modal-title" data-sk="Ako používame cookies" data-en="How we use cookies">Ako používame cookies</h2>
+
+        <p data-sk="Táto webová stránka používa iba nevyhnutné (technické) cookies. Nepoužívame žiadne analytické, marketingové ani sledovacie cookies a vaše údaje nezdieľame so žiadnymi tretími stranami na reklamné účely."
+           data-en="This website uses only essential (technical) cookies. We do not use any analytics, marketing, or tracking cookies, and we do not share your data with any third parties for advertising purposes.">Táto webová stránka používa iba nevyhnutné (technické) cookies. Nepoužívame žiadne analytické, marketingové ani sledovacie cookies a vaše údaje nezdieľame so žiadnymi tretími stranami na reklamné účely.</p>
+
+        <h3 data-sk="Cookies, ktoré ukladáme" data-en="Cookies we store">Cookies, ktoré ukladáme</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th data-sk="Názov" data-en="Name">Názov</th>
+              <th data-sk="Účel" data-en="Purpose">Účel</th>
+              <th data-sk="Platnosť" data-en="Duration">Platnosť</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>cookie_consent</td>
+              <td data-sk="Zapamätá si, že ste potvrdili túto lištu, aby sa nezobrazovala znova."
+                  data-en="Remembers that you dismissed this banner so it doesn't appear again.">Zapamätá si, že ste potvrdili túto lištu, aby sa nezobrazovala znova.</td>
+              <td data-sk="12 mesiacov" data-en="12 months">12 mesiacov</td>
+            </tr>
+            <tr>
+              <td>lang</td>
+              <td data-sk="Zapamätá si vami zvolený jazyk (SK/EN)."
+                  data-en="Remembers your chosen language (SK/EN).">Zapamätá si vami zvolený jazyk (SK/EN).</td>
+              <td data-sk="12 mesiacov" data-en="12 months">12 mesiacov</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 data-sk="Obsah tretích strán" data-en="Third-party content">Obsah tretích strán</h3>
+        <p data-sk="Stránka obsahuje vloženú mapu Google (Google Maps) a odkazy na Booking.com. Ak s mapou pracujete alebo na tieto odkazy kliknete, Google alebo Booking.com môžu ukladať vlastné cookies podľa svojich podmienok."
+           data-en="This page embeds a Google Map and links to Booking.com. If you interact with the map or follow those links, Google or Booking.com may set their own cookies under their own policies.">Stránka obsahuje vloženú mapu Google (Google Maps) a odkazy na Booking.com. Ak s mapou pracujete alebo na tieto odkazy kliknete, Google alebo Booking.com môžu ukladať vlastné cookies podľa svojich podmienok.</p>
+
+        <h3 data-sk="Ako spravovať cookies" data-en="Managing cookies">Ako spravovať cookies</h3>
+        <p data-sk="Cookies môžete kedykoľvek vymazať alebo zablokovať v nastaveniach svojho prehliadača. Stránka bude fungovať aj bez nich – iba si nezapamätá váš jazyk a súhlas."
+           data-en="You can delete or block cookies at any time in your browser settings. The site will still work without them — it just won't remember your language and consent choice.">Cookies môžete kedykoľvek vymazať alebo zablokovať v nastaveniach svojho prehliadača. Stránka bude fungovať aj bez nich – iba si nezapamätá váš jazyk a súhlas.</p>
+
+        <h3 data-sk="Kontakt" data-en="Contact">Kontakt</h3>
+        <p data-sk="Otázky o ochrane súkromia: apartmanumestana@gmail.com"
+           data-en="Privacy questions: apartmanumestana@gmail.com">Otázky o ochrane súkromia: <a href="mailto:apartmanumestana@gmail.com">apartmanumestana@gmail.com</a></p>
+
+        <button type="button" class="cookie-modal-close" onclick="closeCookieModal()" data-sk="Zavrieť" data-en="Close">Zavrieť</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

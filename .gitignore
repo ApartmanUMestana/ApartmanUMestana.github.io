@@ -7,9 +7,7 @@ WEBSITE-SPEC.md
 cookie-info-modal.html
 HOW-TO-UPDATE.md
 
-# Coming-soon / maintenance toggle (local only)
-maintenance.html
-.index-backup.html
+# Coming-soon toggle helper scripts (local only; the switch itself is maintenance.js, which IS published)
 COMING-SOON-ON.bat
 COMING-SOON-OFF.bat
 

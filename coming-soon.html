@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1a130d" />
+  <title>Apartmán u Mešťana</title>
+  <link rel="icon" href="assets/favicon.png" />
+  <style>
+    :root{ --bg:#1a130d; --gold:#c9a876; --gold-bright:#d9bc8e; --gold-dim:#8b7453; --cream:#e8dfce; --cream-dim:#b8a988; }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html,body{height:100%;}
+    body{
+      font-family:"Georgia","Palatino Linotype","Times New Roman",serif;
+      color:var(--cream);
+      background:
+        radial-gradient(ellipse at top, rgba(201,168,118,.10), transparent 60%),
+        linear-gradient(180deg,#251a12 0%,#1a130d 55%,#0f0905 100%);
+      min-height:100dvh;display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:2rem 1.25rem;
+    }
+    .wrap{max-width:560px;}
+    .logo{
+      width:120px;height:120px;border-radius:50%;
+      background:var(--cream);padding:4px;border:2px solid var(--gold);
+      box-shadow:0 8px 30px rgba(0,0,0,.6);margin:0 auto 1.5rem;
+    }
+    .eyebrow{text-transform:uppercase;letter-spacing:4px;font-size:12px;color:var(--gold);margin-bottom:.5rem;}
+    h1{font-style:italic;font-weight:400;font-size:clamp(1.8rem,6vw,2.8rem);color:var(--cream);letter-spacing:.5px;margin-bottom:1rem;}
+    .ornament{color:var(--gold-dim);letter-spacing:8px;font-size:18px;margin:1.25rem 0;}
+    p{color:var(--cream-dim);font-size:1.1rem;line-height:1.6;margin-bottom:.5rem;}
+    .en{color:var(--gold-dim);font-style:italic;font-size:1rem;}
+    .contact{margin-top:2rem;font-size:1rem;}
+    .contact a{color:var(--gold);text-decoration:none;}
+    .contact a:hover{color:var(--gold-bright);}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <img class="logo" src="assets/logo.png" alt="Apartmán u Mešťana" />
+    <div class="eyebrow">Apartmán u Mešťana</div>
+    <h1>Pripravujeme pre vás stránku</h1>
+    <div class="ornament">❦ ❦ ❦</div>
+    <p>Naša webová stránka je momentálne v príprave. Ďakujeme za trpezlivosť.</p>
+    <p class="en">Our website is being prepared. Thank you for your patience.</p>
+    <p class="contact">
+      📧 <a href="mailto:apartmanumestana@gmail.com">apartmanumestana@gmail.com</a>
+    </p>
+  </div>
+</body>
+</html>
