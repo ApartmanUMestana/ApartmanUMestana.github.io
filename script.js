@@ -112,6 +112,8 @@
     var dotsWrap = car.querySelector(".carousel-dots");
     if (!track) return;
 
+    var userInteracted = false; // true once the visitor scrolls/clicks a control
+
     function slideStep() {
       var slide = track.querySelector(".gallery-item");
       if (slide) return slide.getBoundingClientRect().width + 14; // + gap
@@ -145,6 +147,7 @@
             b.className = "carousel-dot";
             b.setAttribute("aria-label", "Fotografia " + (idx + 1));
             b.addEventListener("click", function () {
+              userInteracted = true;
               track.scrollTo({ left: idx * slideStep(), behavior: "smooth" });
             });
             dotsWrap.appendChild(b);
@@ -155,10 +158,18 @@
     }
     function refresh() { updateArrows(); rebuildDots(); }
 
+    // Mark that the visitor has taken control (so we stop auto-pinning to #1)
+    function markInteracted() { userInteracted = true; }
+    ["pointerdown", "touchstart", "wheel", "keydown"].forEach(function (ev) {
+      track.addEventListener(ev, markInteracted, { passive: true });
+    });
+
     if (prev) prev.addEventListener("click", function () {
+      userInteracted = true;
       track.scrollBy({ left: -slideStep(), behavior: "smooth" });
     });
     if (next) next.addEventListener("click", function () {
+      userInteracted = true;
       track.scrollBy({ left: slideStep(), behavior: "smooth" });
     });
 
@@ -167,11 +178,20 @@
     }, { passive: true });
     window.addEventListener("resize", refresh);
 
-    // Always start on photo #1, and refresh state as slides load in.
-    track.scrollLeft = 0;
-    refresh();
-    setTimeout(function () { track.scrollLeft = 0; refresh(); }, 400);
-    setTimeout(refresh, 1500);
+    // Photos load asynchronously and can be inserted ahead of ones already
+    // shown, which would shift the view. Keep the carousel pinned to photo #1
+    // until the visitor actually interacts with it.
+    function pinToStart() {
+      if (!userInteracted) track.scrollLeft = 0;
+      refresh();
+    }
+    if (window.MutationObserver) {
+      new MutationObserver(pinToStart).observe(track, { childList: true });
+    }
+    pinToStart();
+    setTimeout(pinToStart, 400);
+    setTimeout(pinToStart, 1500);
+    setTimeout(pinToStart, 3000);
   });
 
   /* ==========================================================
