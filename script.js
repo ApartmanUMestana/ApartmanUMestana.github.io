@@ -89,6 +89,45 @@
   autoGallery("moodGallery", "assets/img/gallery/", "mood", 30, "Banská Štiavnica a okolie");
 
   /* ==========================================================
+     Carousel arrows — prev/next scroll the track by one slide.
+     Arrows hide at the start/end. Works with the auto-loaded
+     slides (widths are read at click time).
+     ========================================================== */
+  document.querySelectorAll(".carousel").forEach(function (car) {
+    var track = car.querySelector(".carousel-track");
+    var prev = car.querySelector(".carousel-prev");
+    var next = car.querySelector(".carousel-next");
+    if (!track) return;
+
+    function slideStep() {
+      var slide = track.querySelector(".gallery-item");
+      if (slide) return slide.getBoundingClientRect().width + 14; // + gap
+      return track.clientWidth * 0.8;
+    }
+    function updateArrows() {
+      var maxScroll = track.scrollWidth - track.clientWidth - 1;
+      if (prev) prev.hidden = track.scrollLeft <= 0;
+      if (next) next.hidden = track.scrollLeft >= maxScroll;
+    }
+
+    if (prev) prev.addEventListener("click", function () {
+      track.scrollBy({ left: -slideStep(), behavior: "smooth" });
+    });
+    if (next) next.addEventListener("click", function () {
+      track.scrollBy({ left: slideStep(), behavior: "smooth" });
+    });
+
+    track.addEventListener("scroll", function () {
+      window.requestAnimationFrame(updateArrows);
+    }, { passive: true });
+    window.addEventListener("resize", updateArrows);
+    // Slides load asynchronously — refresh arrow state a few times after load
+    updateArrows();
+    setTimeout(updateArrows, 400);
+    setTimeout(updateArrows, 1500);
+  });
+
+  /* ==========================================================
      Header: add shadow once the user scrolls
      ========================================================== */
   var header = document.getElementById("siteHeader");
