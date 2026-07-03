@@ -89,26 +89,60 @@
   autoGallery("moodGallery", "assets/img/gallery/", "mood", 30, "Banská Štiavnica a okolie");
 
   /* ==========================================================
-     Carousel arrows — prev/next scroll the track by one slide.
-     Arrows hide at the start/end. Works with the auto-loaded
-     slides (widths are read at click time).
+     Carousel — one photo at a time, prev/next arrows + dots.
+     Arrows hide at the ends; dots track the current photo and
+     jump to it on click. Always starts on photo #1.
+     Slides load asynchronously, so state is refreshed after load.
      ========================================================== */
   document.querySelectorAll(".carousel").forEach(function (car) {
     var track = car.querySelector(".carousel-track");
     var prev = car.querySelector(".carousel-prev");
     var next = car.querySelector(".carousel-next");
+    var dotsWrap = car.querySelector(".carousel-dots");
     if (!track) return;
 
     function slideStep() {
       var slide = track.querySelector(".gallery-item");
       if (slide) return slide.getBoundingClientRect().width + 14; // + gap
-      return track.clientWidth * 0.8;
+      return track.clientWidth;
+    }
+    function currentIndex() {
+      return Math.round(track.scrollLeft / slideStep());
     }
     function updateArrows() {
       var maxScroll = track.scrollWidth - track.clientWidth - 1;
       if (prev) prev.hidden = track.scrollLeft <= 0;
       if (next) next.hidden = track.scrollLeft >= maxScroll;
     }
+    function updateActiveDot() {
+      if (!dotsWrap) return;
+      var idx = currentIndex();
+      var dots = dotsWrap.children;
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.toggle("active", i === idx);
+      }
+    }
+    function rebuildDots() {
+      if (!dotsWrap) return;
+      var count = track.querySelectorAll(".gallery-item").length;
+      if (dotsWrap.children.length !== count) {
+        dotsWrap.innerHTML = "";
+        for (var i = 0; i < count; i++) {
+          (function (idx) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "carousel-dot";
+            b.setAttribute("aria-label", "Fotografia " + (idx + 1));
+            b.addEventListener("click", function () {
+              track.scrollTo({ left: idx * slideStep(), behavior: "smooth" });
+            });
+            dotsWrap.appendChild(b);
+          })(i);
+        }
+      }
+      updateActiveDot();
+    }
+    function refresh() { updateArrows(); rebuildDots(); }
 
     if (prev) prev.addEventListener("click", function () {
       track.scrollBy({ left: -slideStep(), behavior: "smooth" });
@@ -118,13 +152,15 @@
     });
 
     track.addEventListener("scroll", function () {
-      window.requestAnimationFrame(updateArrows);
+      window.requestAnimationFrame(function () { updateArrows(); updateActiveDot(); });
     }, { passive: true });
-    window.addEventListener("resize", updateArrows);
-    // Slides load asynchronously — refresh arrow state a few times after load
-    updateArrows();
-    setTimeout(updateArrows, 400);
-    setTimeout(updateArrows, 1500);
+    window.addEventListener("resize", refresh);
+
+    // Always start on photo #1, and refresh state as slides load in.
+    track.scrollLeft = 0;
+    refresh();
+    setTimeout(function () { track.scrollLeft = 0; refresh(); }, 400);
+    setTimeout(refresh, 1500);
   });
 
   /* ==========================================================
