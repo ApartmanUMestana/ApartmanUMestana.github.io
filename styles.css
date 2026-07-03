@@ -96,7 +96,7 @@ p { margin: 0 0 1rem; }
 
 .section-title {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-style: italic;
+  font-style: normal;
   text-align: center;
   color: var(--cream);
   letter-spacing: 0.5px;
@@ -184,7 +184,7 @@ p { margin: 0 0 1rem; }
 }
 .brand-name {
   font-family: var(--font-head);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.15rem;
   color: var(--cream);
   letter-spacing: 0.3px;
@@ -275,7 +275,7 @@ p { margin: 0 0 1rem; }
 }
 .hero-headline {
   color: var(--cream);
-  font-style: italic;
+  font-style: normal;
   font-size: clamp(2rem, 6vw, 3.6rem);
   letter-spacing: 0.5px;
   margin-bottom: 0.75rem;
@@ -453,7 +453,7 @@ p { margin: 0 0 1rem; }
   text-transform: uppercase;
   margin-bottom: 0.75rem;
 }
-.card-title { font-size: 1.4rem; font-style: italic; margin-bottom: .5rem; }
+.card-title { font-size: 1.4rem; font-style: normal; margin-bottom: .5rem; }
 .card-title a { color: var(--cream); }
 .card-title a:hover { color: var(--gold-bright); }
 .card-body p { color: var(--cream-dim); font-size: 0.98rem; }
@@ -481,7 +481,7 @@ p { margin: 0 0 1rem; }
    CONTACT
    ============================================================ */
 .contact-block { text-align: center; }
-.contact-name { font-family: var(--font-head); font-style: italic; font-size: 1.7rem; color: var(--cream); margin-bottom: .25rem; }
+.contact-name { font-family: var(--font-head); font-style: normal; font-size: 1.7rem; color: var(--cream); margin-bottom: .25rem; }
 .contact-tagline { color: var(--cream-dim); margin-bottom: 1.75rem; }
 .contact-list { list-style: none; margin: 0 auto 1.75rem; padding: 0; max-width: 460px; }
 .contact-list li {
@@ -548,7 +548,7 @@ p { margin: 0 0 1rem; }
   width: 56px; height: 56px; border-radius: 50%;
   background: var(--cream); padding: 3px; border: 1px solid var(--gold);
 }
-.footer-brand { font-family: var(--font-head); font-style: italic; font-size: 1.3rem; color: var(--cream); margin: 0; }
+.footer-brand { font-family: var(--font-head); font-style: normal; font-size: 1.3rem; color: var(--cream); margin: 0; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.25rem; }
 .footer-nav a { color: var(--cream-dim); font-size: 0.95rem; }
 .footer-nav a:hover { color: var(--gold-bright); }
@@ -635,7 +635,7 @@ p { margin: 0 0 1rem; }
 .cookie-modal h2 {
   margin: 0 0 1rem;
   color: var(--gold);
-  font-style: italic;
+  font-style: normal;
   font-size: 1.4rem;
   letter-spacing: 0.04em;
 }
