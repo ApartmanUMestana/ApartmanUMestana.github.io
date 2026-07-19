@@ -434,8 +434,6 @@ p { margin: 0 0 1rem; }
   text-align: left;
 }
 .amenity-group {
-  -webkit-column-break-inside: avoid;   /* keep a category together in one column */
-  break-inside: avoid;
   margin: 0 0 1.6rem;                    /* free line between categories */
 }
 .amenity-title {
@@ -446,6 +444,8 @@ p { margin: 0 0 1rem; }
   margin: 0 0 .6rem;
   padding-bottom: .4rem;
   border-bottom: 1px solid var(--border-soft);
+  -webkit-column-break-after: avoid;    /* keep heading attached to its list */
+  break-after: avoid;
 }
 .amenity-group .checklist li { font-size: .98rem; }
 @media (max-width: 900px) { .amenities-grid { column-count: 2; } }
