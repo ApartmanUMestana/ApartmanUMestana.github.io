@@ -425,6 +425,29 @@ p { margin: 0 0 1rem; }
   color: var(--gold); font-weight: 700;
 }
 
+/* Amenities grouped into categories (symmetric columns, bold headings) */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem 2.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.amenity-group { break-inside: avoid; }
+.amenity-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin: 0 0 .6rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+.amenity-group .checklist li { font-size: .98rem; }
+@media (max-width: 900px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .amenities-grid { grid-template-columns: 1fr; max-width: 320px; } }
+
 /* ============================================================
    CARDS (attractions)
    ============================================================ */
