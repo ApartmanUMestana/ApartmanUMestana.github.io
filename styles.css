@@ -323,6 +323,7 @@ p { margin: 0 0 1rem; }
 .carousel { position: relative; }
 .carousel-track {
   display: flex;
+  align-items: center;              /* center shorter slides when a portrait makes the row taller */
   gap: 14px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -342,6 +343,8 @@ p { margin: 0 0 1rem; }
 /* Apartment gallery: show each photo whole (incl. portrait) — no cropping */
 #apartmentGallery .gallery-item { background: var(--bg); }
 #apartmentGallery .gallery-item img { object-fit: contain; }
+/* Portrait photos get a taller slide so they're bigger with smaller side bars */
+#apartmentGallery .gallery-item.is-portrait { height: min(82vh, 760px); }
 .carousel-arrow {
   position: absolute;
   top: 50%;

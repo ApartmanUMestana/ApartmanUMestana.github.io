@@ -68,6 +68,12 @@
       img.src = src; // already cached by the probe → instant
       img.alt = alt;
       img.loading = "lazy";
+      // Tag portrait photos so their carousel slide can be taller
+      var markPortrait = function () {
+        if (img.naturalHeight > img.naturalWidth) a.classList.add("is-portrait");
+      };
+      img.addEventListener("load", markPortrait);
+      if (img.complete && img.naturalWidth) markPortrait();
       a.appendChild(img);
       insertInOrder(a, num);
     };
