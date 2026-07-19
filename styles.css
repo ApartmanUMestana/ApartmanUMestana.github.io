@@ -395,21 +395,30 @@ p { margin: 0 0 1rem; }
   list-style: none; padding: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.75rem 2rem;
-  max-width: 900px;
+  gap: 1.25rem;
+  max-width: 940px;
   margin: 0 auto;
-  text-align: left;
 }
-.fact { display: block; }
+.fact {
+  background: var(--surface);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem 1.4rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform .2s, border-color .2s;
+}
+.fact:hover { transform: translateY(-3px); border-color: var(--gold-dim); }
+.fact-icon { display: block; font-size: 1.9rem; line-height: 1; margin-bottom: .55rem; filter: sepia(.2); }
 .fact-title {
   display: block;
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--gold);
-  margin-bottom: .2rem;
+  margin-bottom: .15rem;
 }
-.fact-desc { display: block; color: var(--cream-dim); font-size: .98rem; }
+.fact-desc { display: block; color: var(--cream-dim); font-size: .95rem; }
 @media (max-width: 820px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .facts-grid { grid-template-columns: 1fr; max-width: 320px; } }
 
