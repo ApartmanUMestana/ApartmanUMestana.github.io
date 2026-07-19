@@ -302,7 +302,7 @@
         <span class="eyebrow" data-sk="Okolie" data-en="Nearby">Okolie</span>
         <h2 class="section-title" data-sk="Zaujímavosti v okolí" data-en="Nearby attractions">Zaujímavosti v okolí</h2>
         <div class="ornament">❦</div>
-        <div class="cards-grid">
+        <div class="cards-grid is-collapsed" id="attractionsGrid">
 
           <article class="card reveal">
             <div class="card-media"><img src="assets/img/attractions/stary-zamok.jpg" alt="Starý zámok" loading="lazy" /></div>
@@ -547,6 +547,13 @@
             </div>
           </article>
 
+        </div>
+        <div class="showmore-wrap">
+          <button type="button" class="btn-showmore" id="attractionsToggle" aria-expanded="false" aria-controls="attractionsGrid">
+            <span class="showmore-more" data-sk="Zobraziť viac" data-en="Show more">Zobraziť viac</span>
+            <span class="showmore-less" data-sk="Zobraziť menej" data-en="Show less">Zobraziť menej</span>
+            <span class="showmore-caret" aria-hidden="true">▾</span>
+          </button>
         </div>
       </div>
     </section>

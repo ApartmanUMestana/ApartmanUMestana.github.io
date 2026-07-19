@@ -303,6 +303,28 @@
   }
 
   /* ==========================================================
+     Show more / less (attractions)
+     ========================================================== */
+  var moreGrid = document.getElementById("attractionsGrid");
+  var moreToggle = document.getElementById("attractionsToggle");
+  if (moreGrid && moreToggle) {
+    moreToggle.addEventListener("click", function () {
+      var collapsed = moreGrid.classList.toggle("is-collapsed");
+      moreToggle.setAttribute("aria-expanded", collapsed ? "false" : "true");
+      if (!collapsed) {
+        // reveal the newly shown cards immediately (they never intersected while hidden)
+        moreGrid.querySelectorAll(".card.reveal").forEach(function (c) {
+          c.classList.add("is-visible");
+        });
+      } else {
+        // collapsing: bring the section header back into view
+        var sec = document.getElementById("attractions");
+        if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  }
+
+  /* ==========================================================
      Lightbox gallery
      ========================================================== */
   var lightbox = document.getElementById("lightbox");
