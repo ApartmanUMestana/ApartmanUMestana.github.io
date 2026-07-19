@@ -286,8 +286,8 @@ p { margin: 0 0 1rem; }
 }
 .hero-lede {
   color: var(--cream);
-  font-size: 1.15rem;
-  max-width: 560px;
+  font-size: 1.35rem;
+  max-width: 600px;
   margin: 0 auto 2rem;
   text-shadow: 0 1px 3px rgba(0,0,0,.6), 0 2px 12px rgba(0,0,0,.5);
 }
