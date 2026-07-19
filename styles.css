@@ -426,9 +426,9 @@ p { margin: 0 0 1rem; }
 .fact-icon svg { width: 28px; height: 28px; display: block; }
 .fact-title {
   display: block;
-  font-family: var(--font-head);
-  font-weight: 700;
-  font-size: 1.15rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.05rem;
   color: var(--gold);
   margin-bottom: .15rem;
 }
