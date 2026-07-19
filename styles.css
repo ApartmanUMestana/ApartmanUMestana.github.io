@@ -415,7 +415,15 @@ p { margin: 0 0 1rem; }
   transition: transform .2s, border-color .2s;
 }
 .fact:hover { transform: translateY(-3px); border-color: var(--gold-dim); }
-.fact-icon { display: block; font-size: 1.9rem; line-height: 1; margin-bottom: .55rem; filter: sepia(.2); }
+.fact-icon {
+  width: 56px; height: 56px;
+  margin: 0 auto .75rem;
+  border: 1px solid var(--gold-dim);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+}
+.fact-icon svg { width: 28px; height: 28px; display: block; }
 .fact-title {
   display: block;
   font-family: var(--font-head);
