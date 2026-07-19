@@ -339,6 +339,9 @@ p { margin: 0 0 1rem; }
   height: min(64vh, 600px);
   scroll-snap-align: start;
 }
+/* Apartment gallery: show each photo whole (incl. portrait) — no cropping */
+#apartmentGallery .gallery-item { background: var(--bg); }
+#apartmentGallery .gallery-item img { object-fit: contain; }
 .carousel-arrow {
   position: absolute;
   top: 50%;
