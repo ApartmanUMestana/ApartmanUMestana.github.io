@@ -523,28 +523,6 @@ p { margin: 0 0 1rem; }
 }
 .link-more { font-weight: 700; color: var(--gold); letter-spacing: 0.5px; }
 
-/* Show more / less toggle (attractions) */
-.cards-grid.is-collapsed .card:nth-child(n+10) { display: none; }
-.showmore-wrap { display: flex; justify-content: center; margin-top: 2rem; }
-.btn-showmore {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: transparent;
-  color: var(--gold);
-  border: 1px solid var(--gold-dim);
-  border-radius: var(--radius);
-  padding: 0.75rem 1.75rem;
-  font: inherit; font-weight: 700; letter-spacing: 1px;
-  text-transform: uppercase; font-size: 0.85rem;
-  cursor: pointer;
-  transition: background .2s, border-color .2s, color .2s;
-}
-.btn-showmore:hover { background: var(--gold); color: var(--bg); border-color: var(--gold); }
-.btn-showmore .showmore-caret { transition: transform .2s; }
-.btn-showmore[aria-expanded="true"] .showmore-caret { transform: rotate(180deg); }
-.btn-showmore .showmore-less { display: none; }
-.btn-showmore[aria-expanded="true"] .showmore-more { display: none; }
-.btn-showmore[aria-expanded="true"] .showmore-less { display: inline; }
-
 /* ============================================================
    MAP
    ============================================================ */
