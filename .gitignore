@@ -11,6 +11,10 @@ HOW-TO-UPDATE.md
 COMING-SOON-ON.bat
 COMING-SOON-OFF.bat
 
+# Large video files — hosted on YouTube/Drive, never committed to the repo
+*.mp4
+*.mov
+
 # OS / editor cruft
 Thumbs.db
 .DS_Store
